@@ -1,0 +1,16 @@
+{
+  "name": "Digitone II Tools",
+  "short_name": "DN2 Tools",
+  "description": "Mobile-first utility calculators for Digitone II users",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
