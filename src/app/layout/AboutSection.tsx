@@ -8,7 +8,7 @@ export function AboutSection() {
           What this is
         </h2>
         <p>
-          Digitone II Tools is a mobile-first calculator and reference site for Elektron Digitone II users.
+          Digitone 2 Helper is a mobile-first calculator and reference site for Elektron Digitone II users.
           It reduces recurring mental math while programming sequences, patches, and FM sounds.
         </p>
       </div>

@@ -3,6 +3,11 @@
 @layer base {
   :root {
     color-scheme: dark;
+
+    /* Key badge colors — must be preserved exactly per reference */
+    --key-accent: #498f9d;
+    --key-play:   #4caf50;
+    --key-rec:    #c0392b;
   }
 
   body {
@@ -19,4 +24,208 @@
   .mono {
     font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
   }
+}
+
+/* ============================================================
+   Markdown content — used by ShortcutsSection & WorkflowsSection
+   All child rules are plain CSS because dangerouslySetInnerHTML
+   content cannot receive Tailwind utility classes.
+   ============================================================ */
+
+.md-content {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #d4d4d8; /* zinc-300 */
+}
+
+.md-content h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #e4e4e7; /* zinc-200 */
+  letter-spacing: -0.01em;
+}
+
+.md-content h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #27272a; /* zinc-800 */
+  color: #e4e4e7;
+}
+
+.md-content h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  color: var(--key-accent);
+}
+
+.md-content h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  color: #d4d4d8;
+}
+
+.md-content p {
+  margin-bottom: 10px;
+}
+
+.md-content ul,
+.md-content ol {
+  margin-bottom: 10px;
+  padding-left: 22px;
+}
+
+.md-content li {
+  margin-bottom: 3px;
+}
+
+.md-content blockquote {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--key-accent);
+  color: #71717a; /* zinc-500 */
+  font-size: 13px;
+}
+
+.md-content hr {
+  border: none;
+  border-top: 1px solid #27272a;
+  margin: 20px 0;
+}
+
+.md-content strong {
+  font-weight: 600;
+  color: #e4e4e7;
+}
+
+.md-content code {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  background: #27272a; /* zinc-800 */
+  color: #b0c4c8;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.md-content pre {
+  margin: 10px 0;
+  padding: 12px;
+  background: #18181b; /* zinc-900 */
+  border: 1px solid #27272a;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.md-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* === Tables === */
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 10px 0;
+  border: 1px solid #27272a;
+  border-radius: 4px;
+}
+
+.md-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+}
+
+.md-content thead th {
+  background: #1f1f1f;
+  border-bottom: 2px solid var(--key-accent);
+  text-align: left;
+  padding: 9px 11px;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #71717a;
+  white-space: nowrap;
+}
+
+.md-content tbody tr:nth-child(odd) {
+  background: #18181b; /* zinc-900 */
+}
+
+.md-content tbody tr:nth-child(even) {
+  background: #1f1f1f;
+}
+
+.md-content tbody td {
+  padding: 7px 11px;
+  vertical-align: top;
+  border-bottom: 1px solid #27272a;
+}
+
+.md-content tbody td:first-child {
+  white-space: nowrap;
+}
+
+/* Category/group header rows (colspan cells in shortcuts tables) */
+.md-content tbody td[colspan] {
+  font-weight: 600;
+  color: var(--key-accent);
+  padding-top: 12px;
+  background: #09090b; /* zinc-950 */
+}
+
+/* === Key Badges === */
+
+.key-badge {
+  display: inline-block;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 3px;
+  vertical-align: baseline;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.key-badge--accent {
+  background: var(--key-accent);
+  color: #09090b;
+}
+
+.key-badge--neutral {
+  background: #1f1f1f;
+  color: #d8d8d8;
+  border: 1px solid #27272a;
+}
+
+.key-badge--play {
+  background: #1f1f1f;
+  color: var(--key-play);
+  border: 1px solid #27272a;
+}
+
+.key-badge--rec {
+  background: #1f1f1f;
+  color: var(--key-rec);
+  border: 1px solid #27272a;
+}
+
+.dir-arrow {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #d4d4d8;
 }

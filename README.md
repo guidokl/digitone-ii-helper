@@ -1,6 +1,6 @@
-# Digitone II Tools
+# Digitone 2 Helper
 
-Mobile-first utility calculators for Elektron Digitone II users. Reduces recurring mental math for timing, FM synthesis, and filter frequency work — directly on your phone while patching.
+Mobile-first utility calculators and reference for Elektron Digitone II users. Reduces recurring mental math for timing, FM synthesis, and filter frequency work — directly on your phone while patching. Includes hardware shortcut and workflow references.
 
 ## Purpose
 

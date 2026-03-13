@@ -5,15 +5,19 @@ import { TimingSection } from './layout/TimingSection'
 import { FmSection } from './layout/FmSection'
 import { FmPlusSection } from './layout/FmPlusSection'
 import { FilterSection } from './layout/FilterSection'
+import { ShortcutsSection } from './layout/ShortcutsSection'
+import { WorkflowsSection } from './layout/WorkflowsSection'
 import { AboutSection } from './layout/AboutSection'
 import { storageGet, storageSet } from '../lib/storage'
 
 const SECTION_PANELS: Record<SectionId, ComponentType> = {
-  timing: TimingSection,
-  fm: FmSection,
-  fmplus: FmPlusSection,
-  filter: FilterSection,
-  about: AboutSection,
+  timing:    TimingSection,
+  fm:        FmSection,
+  fmplus:    FmPlusSection,
+  filter:    FilterSection,
+  shortcuts: ShortcutsSection,
+  workflows: WorkflowsSection,
+  about:     AboutSection,
 }
 
 function getSectionFromHash(): SectionId {
@@ -23,6 +27,8 @@ function getSectionFromHash(): SectionId {
     fm: 'fm', 'fm-ratio': 'fm', 'fm-sidebands': 'fm', 'fm-index': 'fm', 'fm-envelope': 'fm',
     fmplus: 'fmplus',
     filter: 'filter',
+    shortcuts: 'shortcuts',
+    workflows: 'workflows',
     about: 'about',
   }
   return sectionMap[hash] ?? 'timing'
@@ -59,7 +65,7 @@ export function App() {
       <div className="sticky top-0 z-10 bg-zinc-950">
         <header className="px-4 py-3 border-b border-zinc-800">
           <h1 className="text-sm font-semibold text-zinc-200 tracking-wide">
-            Digitone II <span className="text-blue-400">Tools</span>
+            Digitone 2 <span className="text-blue-400">Helper</span>
           </h1>
         </header>
         <SectionTabs active={section} onChange={setSection} />
