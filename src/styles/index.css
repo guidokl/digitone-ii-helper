@@ -244,3 +244,95 @@
 .md-content--wfl thead th {
   border-bottom-color: #fb923c;
 }
+
+/* ============================================================
+   Mobile responsive table layout (≤ 640 px)
+   Converts 2-column shortcut/action tables to stacked cards.
+   Group-header rows (bold text + empty second cell) become
+   uppercase section labels.
+   ============================================================ */
+
+@media (max-width: 640px) {
+  /* Let wrapper expand naturally; no horizontal scroll needed */
+  .md-content .table-wrap {
+    overflow-x: visible;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    margin: 6px 0;
+  }
+
+  .md-content table {
+    display: block;
+    width: 100%;
+  }
+
+  /* Hide desktop column headers */
+  .md-content thead {
+    display: none;
+  }
+
+  .md-content tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+  }
+
+  /* Group header rows — first cell has bold text, second cell is empty */
+  .md-content tbody tr:has(td:empty) {
+    display: block;
+    background: transparent !important;
+    padding: 10px 0 3px 0;
+  }
+
+  .md-content tbody tr:has(td:empty) td:first-child {
+    display: block;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--key-accent);
+    padding: 0;
+    border: none;
+    white-space: normal;
+  }
+
+  .md-content tbody tr:has(td:empty) td:empty {
+    display: none;
+  }
+
+  /* Regular shortcut rows → stacked card */
+  .md-content tbody tr:not(:has(td:empty)) {
+    display: flex;
+    flex-direction: column;
+    background: #18181b !important;
+    border: 1px solid #27272a;
+    border-radius: 5px;
+    padding: 8px 10px;
+    gap: 5px;
+  }
+
+  .md-content tbody tr:not(:has(td:empty)) td {
+    display: block;
+    padding: 0 !important;
+    border: none !important;
+    white-space: normal;
+  }
+
+  /* Action description (2nd column) floated to top */
+  .md-content tbody tr:not(:has(td:empty)) td:nth-child(2) {
+    order: -1;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #a1a1aa;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Shortcut badges row (1st column) below description */
+  .md-content tbody tr:not(:has(td:empty)) td:nth-child(1) {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+}
