@@ -1,15 +1,34 @@
+const h2 = 'text-[17px] font-semibold text-zinc-200 border-b border-zinc-800 pb-1.5'
+
 export function FmPlusSection() {
   return (
-    <div className="space-y-4">
-      <IntroCard />
-      <CoreApproachCard />
-      <RatioMapCard />
-      <IndexBehaviourCard />
-      <EnvelopeMovesCard />
-      <DigitoneTipsCard />
-      <CommonMistakesCard />
-      <QuickRecipesCard />
-      <BasicRulesCard />
+    <div className="space-y-6">
+      <h1 className="text-xl font-semibold text-zinc-200 mt-1">FM Synthesis Reference</h1>
+
+      <div className="space-y-4">
+        <h2 className={h2}>Foundations</h2>
+        <IntroCard />
+        <CoreApproachCard />
+        <RatioMapCard />
+        <IndexBehaviourCard />
+      </div>
+
+      <div className="space-y-4">
+        <h2 className={h2}>Techniques</h2>
+        <EnvelopeMovesCard />
+        <DigitoneTipsCard />
+      </div>
+
+      <div className="space-y-4">
+        <h2 className={h2}>Troubleshooting</h2>
+        <CommonMistakesCard />
+      </div>
+
+      <div className="space-y-4">
+        <h2 className={h2}>Recipes &amp; Rules</h2>
+        <QuickRecipesCard />
+        <BasicRulesCard />
+      </div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 ```markdown
-# Digitone II — Practical Workflows & Techniques
+# Practical Workflows & Techniques
 
 ---
 

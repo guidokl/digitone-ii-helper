@@ -1,5 +1,5 @@
 ```markdown
-# Elektron Digitone II — Shortcut & Key Combination Reference
+# Shortcut & Key Combination Reference
 
 ---
 

@@ -229,3 +229,18 @@
   font-weight: 600;
   color: #d4d4d8;
 }
+
+/* WFL (Workflows) section — orange accent override.
+   Overrides h3 headings, blockquote border, and table header accent line.
+   Key badge colors (.key-badge--*) are intentionally not overridden. */
+.md-content--wfl h3 {
+  color: #fb923c; /* orange-400 */
+}
+
+.md-content--wfl blockquote {
+  border-left-color: #fb923c;
+}
+
+.md-content--wfl thead th {
+  border-bottom-color: #fb923c;
+}

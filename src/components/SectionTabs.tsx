@@ -9,7 +9,7 @@ const TABS: Tab[] = [
   { id: 'timing',    label: 'CLK' },
   { id: 'fm',        label: 'FM' },
   { id: 'fmplus',    label: 'FM+' },
-  { id: 'filter',    label: 'FLT' },
+  { id: 'filter',    label: 'VAR' },
   { id: 'shortcuts', label: 'HKY' },
   { id: 'workflows', label: 'WFL' },
   { id: 'about',     label: 'ℹ' },
@@ -19,9 +19,9 @@ const ACTIVE_STYLES: Record<SectionId, string> = {
   timing:    'text-blue-400 border-blue-500',
   fm:        'text-pink-400 border-pink-500',
   fmplus:    'text-violet-400 border-violet-500',
-  filter:    'text-cyan-400 border-cyan-500',
-  shortcuts: 'text-amber-400 border-amber-500',
-  workflows: 'text-green-400 border-green-500',
+  filter:    'text-yellow-400 border-yellow-500',
+  shortcuts: 'text-[#498f9d] border-[#498f9d]',
+  workflows: 'text-orange-400 border-orange-500',
   about:     'text-zinc-300 border-zinc-400',
 }
 

@@ -11,5 +11,5 @@ export function WorkflowsSection() {
     applyHeadingNumbers(ref.current, 1)
   }, [])
 
-  return <div ref={ref} className="md-content" />
+  return <div ref={ref} className="md-content md-content--wfl" />
 }
